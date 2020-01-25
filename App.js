@@ -22,8 +22,10 @@ export default function App() {
   };
 
   return (
-    <View style={styles.screen} >
-      <Button title="add new goal" style={{ marginTop: 40 }} onPress={() => setIsaddMode(true)} />
+    <View style={styles.fold}  >
+      <View style={styles.screen} >
+        <Button title="add new goal" color='cyan' onPress={() => setIsaddMode(true)} />
+      </View>
       <GoalInput visible={isAddMode} onAddGoal={addGoalHandler} onCancel={cancelGoalAdditionHandler} />
       <FlatList
         keyExtractor={(item, index) => item.id}
@@ -32,14 +34,24 @@ export default function App() {
       />
 
 
+
     </View>
+
   );
 }
 
 const styles = StyleSheet.create({
   screen: {
-    padding: 25
+    padding: 25,
+    marginTop: 260,
+    borderRadius: 100,
+
+    alignItems: 'center'
+
   },
+  fold: {
+    padding: 25
+  }
 
 
 
